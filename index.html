@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Border Website</title>
+    <style>
+	* {
+	    user-select: none;
+	}
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0a0a0a;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Main Content Container with Neon Border */
+        .content-container {
+            width: 80%;
+            max-width: 800px;
+            padding: 40px;
+            background-color: rgba(20, 20, 30, 0.8);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        /* Neon Border Animation */
+        .content-container::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, 
+                #ff00ff, #00ffff, #ff00ff, #00ffff);
+            background-size: 400%;
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0.8;
+            animation: neon-border 4s linear infinite;
+        }
+        
+        /* Inner Background to Cover Border Overflow */
+        .content-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(20, 20, 30, 0.8);
+            border-radius: 10px;
+            z-index: -1;
+        }
+        
+        /* Neon Border Animation */
+        @keyframes neon-border {
+            0% {
+                background-position: 0% 50%;
+                filter: blur(5px);
+            }
+            50% {
+                background-position: 100% 50%;
+                filter: blur(8px);
+            }
+            100% {
+                background-position: 0% 50%;
+                filter: blur(5px);
+            }
+        }
+        
+        /* Neon Title Effect */
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff;
+            animation: neon-flicker 2s infinite alternate;
+            margin-bottom: 30px;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            color: #0ff;
+            text-shadow: 
+                0 0 5px rgba(0, 255, 255, 0.5),
+                0 0 10px rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Title Flicker Animation */
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px #0ff,
+                    0 0 40px #0ff,
+                    0 0 80px #0ff;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        /* Background Animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 100, 255, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 200, 0.1) 0%, transparent 30%);
+            z-index: -2;
+            animation: bg-pan 20s infinite alternate;
+        }
+        
+        @keyframes bg-pan {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.2) rotate(5deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h1>Nuestro profesor de física y química es EL MEJOR</h1>
+        
+        <p>Nuestro profesor es el mejor que he tenido en mi vida. No solo es increíblemente inteligente y sabe explicar todo de manera clara, sino que también es divertido, amable y siempre sabe cómo apoyarnos. Cada clase con él es una oportunidad para aprender algo nuevo, no solo sobre la ciencia, sino también sobre la vida. Por eso, cuando él les pide algo, escuchen con atención. Ser profesor es un desafío enorme, y él se lo merece todo nuestro respeto y gratitud.</p>
+        
+              
+        <p>Además, quiero decirles a todos ustedes, mis compañeros, que valoro muchísimo su apoyo y amabilidad hacia mí. Estoy pasando por un momento difícil, y su ayuda, comprensión y cariño significan más de lo que pueden imaginar. Ustedes no son solo compañeros de clase, son como una segunda familia para mí. ¡Son el mejor grupo con el que he podido compartir el aula! De verdad, ¡muchísimas gracias por todo!</p>
+        
+        
+    </div>
+</body>
+</html>
